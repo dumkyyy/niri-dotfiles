@@ -1,0 +1,124 @@
+prefer-no-csd
+
+input {
+    keyboard {
+        xkb {
+	    layout "us,ru"
+	    options "grp:alt_shift_toggle"
+        variant "intl"
+        }
+        // numlock
+    }
+
+    touchpad {
+        tap
+	natural-scroll
+    }
+
+    mouse {
+        // off
+    }
+
+    trackpoint {
+        // off
+    }
+
+    // warp-mouse-to-focus
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+cursor {
+	hide-when-typing
+	xcursor-theme "Bibata-Modern-Ice"
+	xcursor-size 24
+}
+
+// Monitors
+// output "HDMI-A-1" {
+// 	mode "1366x768@60.000"
+// 	position x=0 y=0
+// }
+
+output "VGA-1" {
+	mode "1366x768@59.790"
+	position x=0 y=0
+}
+
+layout {
+    gaps 10
+
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width { proportion 0.5; }
+
+   focus-ring {
+        width 0.5
+	active-color "#73da71"
+    }
+
+    shadow {
+        on
+
+        softness 30
+        spread 5
+        offset x=5 y=5
+        color "#0007"
+    }
+
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+}
+
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// screenshot-path "~/Images from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+    // off
+    slowdown 1.5
+}
+
+window-rule {
+    match app-id=r#"Firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+/-window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+
+    block-out-from "screen-capture"
+    // block-out-from "screencast"
+}
+
+overview {
+	zoom 0.6
+}
+gestures {
+    hot-corners {
+	    off
+    }
+}
+
+include "binds.kdl"
+
+// Autostart
+spawn-at-startup "pipewire"
+spawn-at-startup "swaync"
+spawn-at-startup "waybar"
+spawn-at-startup "swayosd-libinput-backend"
+spawn-at-startup "swayosd-server"
+spawn-sh-at-startup "swaybg -i ~/Pictures/walpapper.jpg"

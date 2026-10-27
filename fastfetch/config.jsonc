@@ -1,0 +1,64 @@
+
+{
+  "logo": {
+    "source": "void2_small",
+    "type": "builtin"
+},
+
+  "modules": [   
+    
+    {
+      "type": "os",
+      "key": " ",
+      "format":"{##df4aed} {#}OS: {#}{name} Linux"
+    },
+    {
+      "type": "kernel",
+      "key": " ",
+      "format": "{##df4aed} {#}Kernel: {#}{2}"
+    },
+
+    {
+      "type": "packages",
+      "key": " ",
+      "format": "{##df4aed} {#}Packages: {#}{10}",
+      "combined": true
+    },
+
+    {
+      "type": "wm",
+      "key": " ",
+      "format": "{##df4aed} {#}WM: {#}{1}"
+    },
+
+    {
+      "type": "terminal",
+      "key": " ",
+      "format": "{##df4aed} {#}Terminal: {1}"
+    },
+
+    {
+      "type": "shell",
+      "key": " ",
+      "format": "{##df4aed} {#}Shell: {1}"
+    },
+
+     {
+       "type": "uptime",
+       "key": " ",
+       "format": "{##df4aed} {#}Uptime: {#}{1} days {2} hours {3} minutes"
+     },
+
+    // {
+    //   "type": "cpu",
+    //   "key": " ", 
+    //   "temp": true,
+    //  "format":"{##df4aed} {#}Cpu: {#}{name} ({temperature})"
+    // },
+    {
+        "type": "memory",
+        "key": "{##df4aed} {#}Memory usage",
+        "format": "{1}"
+    }
+  ]
+}
